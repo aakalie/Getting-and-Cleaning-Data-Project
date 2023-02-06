@@ -1,11 +1,27 @@
-R script called run_analysis.R that does the following has been created. 
+The data preparation has been performed and then the required 5 steps has been followed.          
 
-      Merges the training and the test sets to create one data set.
 
-      Extracts only the measurements on the mean and standard deviation for each measurement. 
+The dataset downloaded and extracted under the folder called UCI HAR Dataset.
 
-      Uses descriptive activity names to name the activities in the data set
+Each data was assigned to variables
+      The training data was assigned as:
+             x_training 
+             y_training 
+             subject_training
+             and bind together as training <- cbind(subject_training, x_training, y_training)
+      The test data was assigned as:
+            x_test 
+            y_test 
+            subject_test
+            and bind together as test <- cbind(subject_test, x_test, y_test).
+      
+The training and the test sets are merged as mergedset <- rbind(training, test)
+ 
+The measurements on the mean and standard deviation for each measurement are extracted as stdmeanset, by subsetting Merged_Data and selecting only columns.
+ 
 
-      Appropriately labels the data set with descriptive variable names. 
+The data set was labeled with descriptive variable names.
 
-      From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+Another independent data set, averageset,  was created with the average of each variable for each activity and each subject 
+by sumarizing and taking the means of each variable for each activity and each subject, after groupped by subject and activity.
+The data was finally exported as averageset.txt file.
